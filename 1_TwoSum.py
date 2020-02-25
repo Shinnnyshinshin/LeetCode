@@ -84,7 +84,7 @@ class TestSolution(unittest.TestCase):
         nums = [3, 2, 4]
         ans =  [1, 2]
         self.assertEqual(Solution().twoSum(nums, target), ans)
- 
+  
     def test_ThirdTest(self):
         target = 6
         nums = [3, 3]
