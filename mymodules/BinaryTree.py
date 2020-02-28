@@ -40,17 +40,24 @@ class Tree(TreeNode):
         if val == node.val:
             return node
         elif val < node.val and node.left is not None:
-            self._find(val, node.left)
+            return self._find(val, node.left)
         elif val > node.val and node.right is not None:
-            self._find(val, node.right)
+            return self._find(val, node.right)
+        else:
+            return None
                 
-                
-    def printtree(self):
-        if self.root is not None:
-            self._printtree(self.root)
+    def printtree(self, node):
+        if node is None:
+            print(" not in tree ")
+        else:
+            self._printtree(node)
     
-    def _printtree(self, node):
+    def _printtree(self, node, prefix="", isLeft=True):
         if node is not None:
-            self._printtree(node.left)
-            print(str(node.val) + ' ')
-            self._printtree(node.right)
+            if node.right is not None:
+                self._printtree(node.right, prefix + ("│   " if isLeft else "    "), False)
+            
+            print(prefix + ("└── " if isLeft else "┌── ") + str(node.val))
+            
+            if node.left is not None:
+                self._printtree(node.left, prefix + ("    " if isLeft else "│   "), True)
