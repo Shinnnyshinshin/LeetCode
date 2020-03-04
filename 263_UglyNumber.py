@@ -40,29 +40,31 @@ Input is within the 32-bit signed integer range: [−231,  231 − 1].
 
 """
 Prime factors only include 2, 3, 5
-
-* this i
     - is the % of 2, 3, 5 zero.  This is the first condition. 
     - there can't be other prime factors... then you keep dividing it down.. and then you have to be left with 1. If you are left with a number that is not 
 
+* the equation is something like this : u=(2^i)*(3^j)*(5^k)
+
 """
+
+#-------------------------------------------------------------------------------
+#    Solution : DynamicProgramming.
+#-------------------------------------------------------------------------------
+
+# we are going to store them all and then we are going to 
+
 
 #-------------------------------------------------------------------------------
 #    Solution : Iterative. 
 #-------------------------------------------------------------------------------
 
-def my_isUgly_Iterative_Helper(num_to_test, factor):
-    while(num_to_test % factor == 0):
-        num_to_test = num_to_test / factor
-    return num_to_test 
-
 def my_isUgly_Iterative(num_to_test):
-    num_to_test = my_isUgly_Iterative_Helper(num_to_test, 2)
-    num_to_test = my_isUgly_Iterative_Helper(num_to_test, 3)
-    factored = my_isUgly_Iterative_Helper(num_to_test, 5)
-    if int(factored) is not 1:
+    if num_to_test <= 0:
         return False
-    return True
+    for p in [2,3,5]:
+        while num_to_test % p == 0:
+            num_to_test /= p
+    return num_to_test == 1
 
 #-------------------------------------------------------------------------------
 #    Main Leetcode Input Driver
