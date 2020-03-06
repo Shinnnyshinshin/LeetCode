@@ -70,3 +70,26 @@ def my_coinChange_DP(coins, num_to_search):
 #-------------------------------------------------------------------------------
 
 class Solution:
+    def coinChange(self, coins, amount):
+        return my_coinChange_DP(coins, amount)
+
+#-------------------------------------------------------------------------------
+#    Unit Test
+#-------------------------------------------------------------------------------
+
+import unittest
+import sys
+class TestSolution(unittest.TestCase):
+    def test_100(self):
+        us_denom = [1, 5, 10, 25]
+        self.assertEqual(Solution().coinChange(us_denom, 100), 4)
+    def test_25(self):
+        us_denom = [1, 5, 10, 25]
+        self.assertEqual(Solution().coinChange(us_denom, 25), 1)
+
+    def test_24(self):
+        us_denom = [1, 5, 10, 25]
+        self.assertEqual(Solution().coinChange(us_denom, 24), 6)
+
+
+unittest.main()
