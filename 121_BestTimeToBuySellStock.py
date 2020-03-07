@@ -84,7 +84,6 @@ class Solution(object):
 import unittest
 import sys
 class TestSolution(unittest.TestCase):
-    """
     def test_first(self):
         prices = [1, 7, 2, 3, 6, 7, 6, 7]
         ans = 6
@@ -93,7 +92,6 @@ class TestSolution(unittest.TestCase):
         prices = [7, 1, 5, 3, 6, 4]
         ans = 5
         self.assertEqual(Solution().maxProfit(prices), ans)
-    """
     def test_third(self):
         prices =[2, 1, 4]
         ans = 3

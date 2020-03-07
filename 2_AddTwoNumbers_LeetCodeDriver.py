@@ -43,21 +43,29 @@ def my_two_sum_helper(node1, node2, carryover):
 
 
 def my_twosum(list1_current, list2_current):
-
     carryover = 0
-    list_to_return = None
+    head_node = None
+    current_node = None
     # keep doing while the nodes are all valid
-    while list1_current is not None and list2_current is not None:
-        returned = my_two_sum_helper(list1_current, list2_current, carryover)
+
+    returned = my_two_sum_helper(list1_current, list2_current, carryover)
+    while returned is not 0:
         to_add = returned % 10
         carryover = returned // 10
-        list_to_return.append(to_add)
-        
+        if head_node is None:
+            head_node = myll.ListNode(to_add)
+            current_node = head_node
+        else:
+            current_node.next = myll.ListNode(to_add)
+            current_node = current_node.next
+
         if list1_current is not None:
             list1_current = list1_current.next
         if list2_current is not None:
             list2_current = list2_current.next
-    return(list_to_return)
+        returned = my_two_sum_helper(list1_current, list2_current, carryover)
+
+    return(head_node)
                 
 
 #-------------------------------------------------------------------------------
@@ -93,3 +101,5 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(Solution().addTwoNumbers(list1.head, list2.head), )
         
 unittest.main()
+[2,4,3]
+[5,6,4]

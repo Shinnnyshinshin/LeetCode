@@ -8,12 +8,13 @@ Following are the methods implemented
 push, reverse, printlist
 
 """
-class Node(object):
+class ListNode(object):
     def __init__(self, x):
         self.val = x
         self.next = None
     def set_next(self, nextval):
         self.next = nextval
+
 
 class LinkedList:
     # initialize the head
@@ -21,9 +22,19 @@ class LinkedList:
         self.head = None
     def push(self, new_val):
         # to the beginning
-        newNode = Node(new_val)
+        newNode = ListNode(new_val)
         newNode.next = self.head
         self.head = newNode
+    def append(self, new_val):
+        lastNode = self.head
+        if self.head is None:
+            self.push(new_val)
+        else:
+            while lastNode.next is not None:
+                lastNode = lastNode.next
+            newNode = ListNode(new_val)
+            lastNode.next = newNode
+
     def helper_function_for_switch(self, previous_node, current_node):
         # what is our finishing function
         # if there is no more node
@@ -47,7 +58,7 @@ class LinkedList:
         while(temp):
             print(temp.val)
             temp = temp.next
-
+"""
 global MyList
 MyList = LinkedList()
 MyList.push(5)
@@ -59,3 +70,5 @@ MyList.push(1)
 MyList.printList()
 MyList.reverse()
 MyList.printList()
+
+"""
