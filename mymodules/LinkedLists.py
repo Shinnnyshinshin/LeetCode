@@ -47,17 +47,23 @@ class LinkedList:
         next_node = current_node.next
         current_node.next = previous_node
         self.helper_function_for_switch(current_node, next_node)        
-        
-        
     def reverse(self):
         if self.head is None:
             return
         self.helper_function_for_switch(None, self.head)
+    def addList(self, listToAdd):
+        for item in listToAdd:
+            self.append(item)
+    
     def printList(self):
-        temp = self.head
-        while(temp):
-            print(temp.val)
-            temp = temp.next
+        to_return = []
+        current_node = self.head
+        while current_node is not None:
+            to_return.append(current_node.val)
+            current_node = current_node.next
+
+        return(to_return)
+
 """
 global MyList
 MyList = LinkedList()

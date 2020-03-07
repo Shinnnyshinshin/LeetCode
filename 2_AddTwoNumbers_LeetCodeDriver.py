@@ -34,11 +34,17 @@ Explanation: 342 + 465 = 807
 from mymodules import LinkedLists as myll
 
 def my_two_sum_helper(node1, node2, carryover):
-    mysum = carryover
-    if node1:
-        mysum += node1.val
-    if node2:
-        mysum += node2.val
+    mysum = None
+    if not node1 and not node2 and carryover == 0:
+        return(mysum)
+    else:
+        mysum = 0
+        if carryover >= 0:
+            mysum += carryover
+        if node1:
+            mysum += node1.val
+        if node2:
+            mysum += node2.val
     return(mysum)
 
 
@@ -47,9 +53,8 @@ def my_twosum(list1_current, list2_current):
     head_node = None
     current_node = None
     # keep doing while the nodes are all valid
-
     returned = my_two_sum_helper(list1_current, list2_current, carryover)
-    while returned is not 0:
+    while returned is not None:
         to_add = returned % 10
         carryover = returned // 10
         if head_node is None:
@@ -58,16 +63,20 @@ def my_twosum(list1_current, list2_current):
         else:
             current_node.next = myll.ListNode(to_add)
             current_node = current_node.next
-
         if list1_current is not None:
             list1_current = list1_current.next
         if list2_current is not None:
             list2_current = list2_current.next
         returned = my_two_sum_helper(list1_current, list2_current, carryover)
-
     return(head_node)
                 
-
+def print_nodes(headnode):
+    to_return = []
+    current_node = headnode
+    while current_node is not None:
+        to_return.append(current_node.val)
+        current_node = current_node.next
+    return(to_return)
 #-------------------------------------------------------------------------------
 #    Main Leetcode Input Driver
 #-------------------------------------------------------------------------------
@@ -75,8 +84,6 @@ def my_twosum(list1_current, list2_current):
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         return my_twosum(l1, l2)
-
-
 
 #-------------------------------------------------------------------------------
 #    Unit Test
@@ -88,18 +95,20 @@ class TestSolution(unittest.TestCase):
 
     def test_Example(self):
         list1 = myll.LinkedList()
-        list1.append(2)
-        list1.append(4)
-        list1.append(3)
-
+        list1.addList([2, 4, 3])
         list2 = myll.LinkedList()
-        list2.append(5)
-        list2.append(6)
-        list2.append(4)
-
-
-        self.assertEqual(Solution().addTwoNumbers(list1.head, list2.head), )
-        
+        list2.addList([5, 6, 4])
+        headnode = Solution().addTwoNumbers(list1.head, list2.head)
+        to_compare = print_nodes(headnode)
+        self.assertEqual(to_compare, [7, 0, 8])
+  
+    def test_Zeros(self):
+        list1 = myll.LinkedList()
+        list1.addList([0])
+        list2 = myll.LinkedList()
+        list2.addList([0])
+        headnode = Solution().addTwoNumbers(list1.head, list2.head)
+        to_compare = print_nodes(headnode)
+        self.assertEqual(to_compare, [0])
+  
 unittest.main()
-[2,4,3]
-[5,6,4]
