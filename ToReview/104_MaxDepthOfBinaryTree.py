@@ -72,7 +72,7 @@ class Solution:
 
 
 class TestSolution(unittest.TestCase):
-    def test_build(self):
+    def test_solution(self):
         test_tree = bt.Tree()
         test_tree.insert(10)
         test_tree.insert(5)
@@ -82,9 +82,6 @@ class TestSolution(unittest.TestCase):
         test_tree.insert(11)
         test_tree.insert(18)
         test_tree.printtree(test_tree.root)
-        print(Solution().maxDepth(test_tree.root))
-        #self.assertEqual(int(string), ans)
-        #self.assertTrue(ans == 1)
-        #self.assertFalse(ans == 2)
-        
+        self.assertEquals(Solution().maxDepth(test_tree.root),3)
+
 unittest.main()
