@@ -18,8 +18,8 @@ class ListNode(object):
 
 class LinkedList:
     # initialize the head
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = head
     def push(self, new_val):
         # to the beginning
         newNode = ListNode(new_val)
