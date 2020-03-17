@@ -10,4 +10,3 @@ Trie : A trie is a datastructure that allows for the insertion of strings.
 """
 class TrieNode(object):
     def __init__(self):
-        
