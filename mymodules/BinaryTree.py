@@ -12,6 +12,10 @@ class Tree(TreeNode):
     def getRoot(self):
         return self.root
     
+
+    def insert_list(self, list_to_add):
+        pass
+
     def insert(self, val):
         if self.root == None:
             self.root = TreeNode(val)
