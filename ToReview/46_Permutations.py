@@ -44,6 +44,17 @@ def my_permute(nums):
     my_permute_helper(nums, 0, len(nums)-1)
     #print(full)
     return full
+
+
+def mymy_permute(nums):
+    ans = [nums]
+    for i in xrange(1, len(nums)):
+        m = len(ans)
+        for k in xrange(m):
+            for j in xrange(i):
+                ans.append(ans[k][:])
+                ans[-1][j], ans[-1][i] = ans[-1][i], ans[-1][j]
+    return ans
 #-------------------------------------------------------------------------------
 #    Main Leetcode Input Driver
 #-------------------------------------------------------------------------------
