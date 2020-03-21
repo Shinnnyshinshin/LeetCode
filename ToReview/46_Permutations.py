@@ -62,7 +62,7 @@ def mymy_permute(nums):
 
 class Solution:
     def permute(self, nums):
-        return my_permute(nums)
+        return mymy_permute(nums)
 
 #-------------------------------------------------------------------------------
 #    Unit Test
