@@ -32,7 +32,19 @@ Output:
 #    Approach
 #-------------------------------------------------------------------------------
 
+"""
+    My initial assumption is that this is going to be similar to permutations (Leetcode #46)
 
+    * Permutations you have N! possibilities, 
+    * Subsets are a little bit different 
+            - mathematically they are defined by 2^N 
+            - because each element can either be present or non-present
+            
+    What does this mean for the problem space? 
+
+    
+    
+"""
 
 #-------------------------------------------------------------------------------
 #    Soluton
