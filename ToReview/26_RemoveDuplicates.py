@@ -109,8 +109,5 @@ class TestSolution(unittest.TestCase):
         nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
         ans = 5 
         self.assertEqual(Solution().removeDuplicates(nums), ans)
-
-
-
         
 unittest.main()
