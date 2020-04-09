@@ -31,9 +31,7 @@ Assume we are dealing with an environment which could only store integers within
 #-------------------------------------------------------------------------------
 
 """
-
 * The easiest way to do this would be convert to a string, and then reverse and make sure it has the correct sign. 
-* If there 
 """
 
 #-------------------------------------------------------------------------------
