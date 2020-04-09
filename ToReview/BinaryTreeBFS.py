@@ -1,9 +1,14 @@
-from mymodules import BinaryTree 
+import sys
+sys.path.append("/Users/willshin/Development/LeetCode/mymodules")
+
+
+
+import BinaryTree as bt
 from collections import deque
 
 
 # so we are going to extend the binary tree to have a BFS_Traversal
-class BFStree(BinaryTree.Tree):
+class BFStree(bt.Tree):
     def __init__(self):
         self.root = None
         self.bfsqueue = deque()
@@ -37,9 +42,9 @@ MyTree.insert(13)
 # we will god 
 
 # this is to find if a value is in the tree
-MyTree.printtree(MyTree.getRoot())
+#MyTree.printtree(MyTree.getRoot())
 MyTree.BFS_traversal(MyTree.getRoot())
 
 
 # my next task is the 3 different DFS traversals:
-https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
+# https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/

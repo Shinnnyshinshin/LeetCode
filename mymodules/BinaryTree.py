@@ -8,10 +8,12 @@ class TreeNode(object):
 class Tree(TreeNode):
     def __init__(self):
         self.root = None
-    
+
     def getRoot(self):
         return self.root
     
+    def setRoot(self, val):
+        self.root = val
 
     def insert_list(self, list_to_add):
         pass
@@ -49,7 +51,7 @@ class Tree(TreeNode):
             return self._find(val, node.right)
         else:
             return None
-                
+    
     def printtree(self, node):
         if node is None:
             print(" not in tree ")
@@ -60,8 +62,6 @@ class Tree(TreeNode):
         if node is not None:
             if node.right is not None:
                 self._printtree(node.right, prefix + ("│   " if isLeft else "    "), False)
-            
             print(prefix + ("└── " if isLeft else "┌── ") + str(node.val))
-            
             if node.left is not None:
                 self._printtree(node.left, prefix + ("    " if isLeft else "│   "), True)
