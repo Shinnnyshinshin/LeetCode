@@ -32,9 +32,23 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 """
     I'll try to solve this problem using an extra array. It would still be
-    O(n) space, and O(n) run time since we are looping through input array once
+    O(n) space, and O(n) run time since we are looping through input array once. 
 
-    Ho 
+   [1,2,3,4,5,6,7] and k = 3  
+   rotate 3 steps to the right: [5,6,7,1,2,3,4] 
+
+   Let's go through each of the numbers and find their new index:
+   * Length of array : 7
+   * 1 : previous index is 0
+       : new index is 0 + k or 3
+   * 5 : previous index is 4
+       : new index is 0 
+       : 4 + k % 7 = 0
+   * 6 : previous index is 5
+       : new index is 1
+       : 5 + k % 7 = 1
+
+
 """
 
 
@@ -43,7 +57,17 @@ rotate 2 steps to the right: [3,99,-1,-100]
 #-------------------------------------------------------------------------------
 
 def my_rotate(nums, k):
-    pass
+    num_elements = len(nums)
+    temp_array = [None] * num_elements
+    for index in range(num_elements):
+        new_index = (index + k) % num_elements
+        temp_array[new_index] = nums[index]
+    
+    for index in range(num_elements):
+        nums[index] = temp_array[index]
+
+    return(nums)
+
                 
 
 #-------------------------------------------------------------------------------
@@ -68,15 +92,15 @@ import unittest
 class TestSolution(unittest.TestCase):
 
     def test_1(self):
-        input = [-1, -100, 3, 99]
+        input = [1, 2, 3, 4, 5, 6, 7]
         k = 3
         solution = [5, 6, 7, 1, 2, 3, 4]
         self.assertEqual(Solution().rotate(input, k), solution)
         
     def test_2(self):
-        input = [1, 2, 3, 4, 5, 6, 7]
-        k = 3
-        solution = [5, 6, 7, 1, 2, 3, 4]
+        input = [-1, -100, 3, 99]
+        k = 2 
+        solution = [3, 99, -1, -100]
         self.assertEqual(Solution().rotate(input, k), solution)
 
 unittest.main()
