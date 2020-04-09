@@ -39,6 +39,10 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
         expected sum = 1 + 2 + 3 = 6
         actual sum = 4
 
+        how do we do the sum? 
+        
+        (3 * 4) / 2 = 6
+        this means (length*length+1)//2 which means we will only take the integer
 
 
 """
