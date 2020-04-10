@@ -53,7 +53,6 @@ Explanation: There is no common prefix among the input strings.
 #-------------------------------------------------------------------------------
 
 def my_longestCommonPrefix(strs):
-
     if strs is None or len(strs) is 0:
         return ""
     # getting the length of first string
