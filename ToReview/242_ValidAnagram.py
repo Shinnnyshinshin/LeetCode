@@ -88,7 +88,7 @@ class TestSolution(unittest.TestCase):
         self.assertTrue(Solution().isAnagram(string1, string2))
     def test_2(self):
         string1 = "rat"
-        string2 = "car"
+        string2 = "car" 
         self.assertFalse(Solution().isAnagram(string1, string2))
 
 unittest.main()
