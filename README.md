@@ -1,4 +1,4 @@
-#s LeetCode
+# LeetCode
 
 Repository of my LeetCode code
 
