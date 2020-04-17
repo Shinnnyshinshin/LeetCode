@@ -1,7 +1,5 @@
-#LeetCode
-Repository of my LeetCode code
-
-Here are my results so far (2020-04-09).
+# LeetCode
+Repository of my LeetCode code as of `r format(Sys.time(), '%d %B, %Y')`
 
 | # | Problem | Difficulty | Tags | Note |
 | :---: | ---- | ---- | ---- | ----- |
