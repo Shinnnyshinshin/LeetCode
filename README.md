@@ -1,5 +1,6 @@
-# LeetCode
-Repository of my LeetCode code as of `r format(Sys.time(), '%d %B, %Y')`
+#s LeetCode
+
+Repository of my LeetCode code
 
 | # | Problem | Difficulty | Tags | Note |
 | :---: | ---- | ---- | ---- | ----- |
@@ -33,8 +34,14 @@ Repository of my LeetCode code as of `r format(Sys.time(), '%d %B, %Y')`
 | 0189 | Rotate Array | Easy | `Array` | |
 | 0190 | Reverse Bits | Easy | `Bit Manipulation` | |
 | 0191 | Number 1 Bits | Easy | `Bit Manipulation` | |
-
-| 0121 | Best Time to Buy-Sell Stock | Easy | `Array` | |
-| 0121 | Best Time to Buy-Sell Stock | Easy | `Array` | |
-| 0121 | Best Time to Buy-Sell Stock | Easy | `Array` | |
-| 0121 | Best Time to Buy-Sell Stock | Easy | `Array` | |
+| 0202 | Happy Number | Easy | `HashTable` | |
+| 0204 | Count Primes | Easy | `HashTable` | |
+| 0206 | Reverse LinkedList | Easy | `Linked List` | |
+| 0217 | Contains Duplicate | Easy | `HashTable` | |
+| 0237 | DeleteNodeOfLinkedList | Easy | `Linked List` | |
+| 0238 | Array Product Except Self | Medium | `Array` | |
+| 0242 | Valid Anagram | Easy | `String` | |
+| 0263 | Ugly Number | Easy | `Math` | |
+| 0264 | Ugly Number II | Medium | `Heap`, `BST` | |
+| 0268 | Missing Number | Medium | `Gauss Formula`, `Math` | |
+| 0283 | Move Zeros | Easy | `Two Pointers` | |
