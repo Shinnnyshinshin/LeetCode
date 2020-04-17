@@ -45,3 +45,11 @@ Repository of my LeetCode code
 | 0264 | Ugly Number II | Medium | `Heap`, `BST` | |
 | 0268 | Missing Number | Medium | `Gauss Formula`, `Math` | |
 | 0283 | Move Zeros | Easy | `Two Pointers` | |
+| 0322 | CoinChange | Medium | `Dynamic Programming` | |
+| 0326 | PowerOfThree | Easy | `Math` | |
+| 0347 | TopKFrequentElements | Medium | `Sort` `Heap` | |
+| 0350 | IntersectionOfTwoArraysII | Easy | `Two Pointers` `Math` `Hash` `Binary Search` | |
+| 0371 | SumofTwoIntegers | Easy | `Math` | |
+| 0387 | PowerOfThree | Easy | `Bit Manipulation` | |
+| 0412 | FizzBuzz | Easy | `Array` | |
+| 0543 | DiameterBinaryTree | Easy | `Tree` | |
